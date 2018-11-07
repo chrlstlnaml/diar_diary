@@ -1,0 +1,79 @@
+
+<!Doctype html>
+{% load static %}
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Dear Diary</title>
+
+    <!-- Последняя компиляция и сжатый CSS <link rel="stylesheet" href="css/style.css">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Дополнение к теме -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Marck+Script" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/diary.css' %}">
+</head>
+
+<body background="/static/white-woolen.png">
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <!-- Brand и toggle сгруппированы для лучшего отображения на мобильных дисплеях -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" id="brand" href="/">Diar Diary</a>
+    </div>
+
+    <!-- Соберите навигационные ссылки, формы, и другой контент для переключения -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="/">Главная<span class="sr-only">(current)</span></a></li>
+        <li><a href="/diary_book">Дневник</a></li>
+        <li><a href="education">Планировщик</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Планирование меню<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="about_me">Меню</a></li>
+            <li><a href="hobbies">Рецепты</a></li>
+          </ul>
+        </li>
+
+      </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+        {% if username %}
+            <li><a href="/auth/logout">Выйти ({{username}})</a></li>
+        {% else %}
+            <li><a href="/auth/login">Войти</a></li>
+        {% endif %}
+        </ul>
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<br><br><br><br>
+
+<div class="container">
+    {% block content %}
+
+    {% endblock %}
+</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!-- Последняя компиляция и сжатый JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

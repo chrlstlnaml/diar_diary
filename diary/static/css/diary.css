@@ -1,0 +1,41 @@
+#brand {
+    font-family: 'Lobster';
+    font-size: 20pt
+}
+
+@media (min-width: 1200px) {
+  .container #register-box{
+    max-width: 350px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container #login-box{
+    max-width: 600px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container #text{
+    max-width: 1100px;
+  }
+}
+
+#diary_text {
+    font-family: 'Marck Script', cursive;
+    font-size: 16pt;
+}
+
+#diary_title {
+    font-family: 'Marck Script', cursive;
+    font-size: 20pt;
+}
+
+h1 {
+    color: #800000;
+    font-family: 'Lobster';
+}
+
+.panel-default > .panel-heading {
+  background: #C0C0C0;
+}

@@ -1,0 +1,34 @@
+{% extends 'diary/base.html' %}
+
+
+    {% block content %}
+
+    <div class="container" id="register-box">
+        <div class="panel panel-primary">
+            <div class="panel-heading text-center"><h2>Регистрация</h2></div>
+            <div class="panel-body">
+                <div>
+                    <form action="/auth/register/" method="post">
+                        {% csrf_token %}
+
+                        {% for field in form %}
+
+                            <h4>{{ field.label_tag }}</h4>
+                            {{ field }}<br>
+                        <!--    {% if field.help_text %} -->
+                        <!--        <span id="helpBlock" class="help-block">{{ field.help_text }}</span> -->
+                        <!--    {% endif %} -->
+                            {% for error in field.errors %}
+                                <p><label class="error text-danger">{{ error }}</label></p>
+                            {% endfor %}
+                        {% endfor %}
+                        <br>
+
+                        <div class="text-center"><input class="btn btn-lg btn-success" type="submit" value="Зарегистрироваться"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}
